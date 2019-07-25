@@ -4,6 +4,7 @@ import com.tarlanbakirli.springrecipeapp.domain.*;
 import com.tarlanbakirli.springrecipeapp.repositories.CategoryRepository;
 import com.tarlanbakirli.springrecipeapp.repositories.RecipeRepository;
 import com.tarlanbakirli.springrecipeapp.repositories.UnitOfMeasureRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -33,7 +35,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
     private List<Recipe> getRecipes(){
 
-        System.out.println("get-de bashlangic");
+        log.debug("I'm in the end of Bootstrap class getRecipes method");
         List<Recipe> recipes = new ArrayList<>(2);
 
         Optional<UnitOfMeasure> eachUomOptional = unitOfMeasureRepository.findByDescription("Each");
@@ -197,7 +199,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         recipes.add(tacosRecipe);
 
-        System.out.println("get-de son");
+        log.debug("I'm in the end of Bootstrap class getRecipes method");
 
         return recipes;
 
