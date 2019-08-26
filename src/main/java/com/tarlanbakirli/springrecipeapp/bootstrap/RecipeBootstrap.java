@@ -1,6 +1,11 @@
 package com.tarlanbakirli.springrecipeapp.bootstrap;
 
-import com.tarlanbakirli.springrecipeapp.domain.*;
+import com.tarlanbakirli.springrecipeapp.domain.Category;
+import com.tarlanbakirli.springrecipeapp.domain.Difficulty;
+import com.tarlanbakirli.springrecipeapp.domain.Ingredient;
+import com.tarlanbakirli.springrecipeapp.domain.Notes;
+import com.tarlanbakirli.springrecipeapp.domain.Recipe;
+import com.tarlanbakirli.springrecipeapp.domain.UnitOfMeasure;
 import com.tarlanbakirli.springrecipeapp.repositories.CategoryRepository;
 import com.tarlanbakirli.springrecipeapp.repositories.RecipeRepository;
 import com.tarlanbakirli.springrecipeapp.repositories.UnitOfMeasureRepository;
@@ -139,6 +144,10 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         guacRecipe.getCategories().add(americanCategory);
         guacRecipe.getCategories().add(mexicanCategory);
+
+        guacRecipe.setUrl("http://www.simplyrecipes.com/recipes/perfect_guacamole/");
+        guacRecipe.setServings(4);
+        guacRecipe.setSource("Simply Recipes");
 
         //add to return list
         recipes.add(guacRecipe);
