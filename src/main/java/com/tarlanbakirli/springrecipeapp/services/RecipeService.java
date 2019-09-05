@@ -1,5 +1,6 @@
 package com.tarlanbakirli.springrecipeapp.services;
 
+import com.tarlanbakirli.springrecipeapp.commands.RecipeCommand;
 import com.tarlanbakirli.springrecipeapp.domain.Recipe;
 import org.springframework.stereotype.Service;
 
@@ -11,5 +12,7 @@ public interface RecipeService {
     Set<Recipe> getRecipes();
 
     Recipe findById(Long id);
+
+    RecipeCommand saveRecipeCommand(RecipeCommand command);
 
 }
